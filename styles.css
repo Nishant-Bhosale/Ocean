@@ -45,8 +45,30 @@
     }
  }
 
-
+.money{
+   position: absolute;
+   bottom: 50vh;
+   left: 50vmin;
+   font-size: 6vmin;
+   z-index: 100;
+   color: white;
+   margin: 0;
+   opacity: .5;
+   text-shadow: 0 0 5px hsl(0, 0%, .5);
+}
  
+.trash-container{
+   position: absolute;
+   width: 100%;
+   height: 50%;
+   bottom: 0;
+   left: 0;
+}
+
+.trash{
+   position: absolute;
+   opacity: 0.75;
+}
 :root {
    --v1: #be91c6;
    --v2: #8a65cc;
