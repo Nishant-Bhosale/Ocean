@@ -68,6 +68,16 @@
 .trash{
    position: absolute;
    opacity: 0.75;
+   animation: bob 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes bob {
+  from{
+    transform: rotate(var(--rotation)) translateY(1vh);
+  }
+  to{
+    transform: rotate(calc(var(--rotation) + 10deg)) translateY(0);
+  }
 }
 :root {
    --v1: #be91c6;

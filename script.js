@@ -48,14 +48,39 @@ async function setupTrash(){
          icon: "phone"
       },
       sm:{
-         amount: parseInt(stringifiedAmount[4]),
+         amount: parseInt(stringifiedAmount[5]),
          icon: "toy-car"
       },
       xs:{
-         amount: parseInt(stringifiedAmount[4]),
+         amount: parseInt(stringifiedAmount[6]),
          icon: "bottle"
       },
    }
 
    console.log(amountLeftToRaise, trashAmount)
+
+   Object.values(trashAmount).forEach(({amount, icon}) => {
+      for(let i = 0; i < amount; i++){
+         createTrash(icon)
+      }
+   })
+
+   function createTrash(icon){
+      const img = document.createElement('img');
+      const top =randomNumberBetween(0, 50);
+      const size = top / 5 + 1;
+      img.classList.add("trash");
+      img.style.width = `${size}vmin`
+      img.style.height = `${size}vmin`
+      img.src = `/imgs/${icon}.svg`;
+      img.style.top = `${top}vh`;
+      img.style.left =`${randomNumberBetween(0, 100)}vw`
+      img.style.setProperty("--rotation", `${randomNumberBetween(-30, 30)}deg`)
+      trashContainer.appendChild(img)
+   }
 }
+
+function randomNumberBetween(min, max){
+   return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
