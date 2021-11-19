@@ -7,3 +7,39 @@
    margin: 0;
  }
  
+ .logo{
+   width: 5rem;
+   height: 5rem;
+   border-radius: 100%;
+   position: absolute;
+   top: .5rem;
+   left: .5rem;
+   overflow: hidden;
+ }
+
+ .logo::before{
+   background: url(/imgs/team-seas-logo.png);
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+ }
+
+ .logo::after{
+   content: "";
+   position: absolute;
+   width: 200%;
+   height: 200%;
+   background: hsl(0, 0%, 100%, .9);
+   bottom: 0;
+   left: -50%;
+   border-radius: 35%;
+   animation: waves 5s ease-in-out alternate infinite;
+ }
+
+ @keyframes waves {
+    to{
+       transform: translateY(-50%) rotate(540deg);
+    }
+ }
