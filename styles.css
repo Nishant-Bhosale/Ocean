@@ -1,0 +1,9 @@
+*, *::before, *::after {
+   font-family: 'Open Sans', sans-serif;
+   user-select: none;
+ }
+ 
+ body {
+   margin: 0;
+ }
+ 
